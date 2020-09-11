@@ -1,7 +1,4 @@
-# But for multiples of three it should output “Fizz” instead of the number and for the multiples of five output “Buzz”. For numbers which are multiples of both three and five output “FizzBuzz”.
-
 # N = list(map(int, input("Enter array: ").split(",")))
-
 
 def solve(n):
   arr = []
@@ -53,8 +50,6 @@ def majorityElement(nums):
     else:
       dic[num] += 1 
 
-
-
 # print(majorityElement(N))  
 
 def calc(arrayVal):
@@ -86,10 +81,11 @@ def mean(arrVal):
   return int(result)
 
 
-cases = int(input())
-while cases > 0:
-  size = int(input())
-  arr = list(map(int, input().split()))
+def takeInput():
+  cases = int(input())
+  while cases > 0:
+    size = int(input())
+    arr = list(map(int, input().split()))
   # num = int(input())
-  print(mean(arr))
-  cases -=1
+    print(mean(arr))
+    cases -=1
