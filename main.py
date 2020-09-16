@@ -62,13 +62,21 @@ def subArraySum(arr, n, sum):
     return 0
 
 
-
+def series(n):
+  # x = [1,2,3]
+  i=1
+  sums = 0
+  while i<=n:
+    val = i*(i+1)/2
+    sums+=val
+    i+=1
+  return int(sums)
 
 cases = int(input())
 while cases > 0:
-    size, sums= input().split()
-    arr = list(map(int, input().split()))
-    # num = it(input()),
-    print(subArraySum(arr,int(size),int(sums)))
+    # size, sums= input().split()
+    # arr = list(map(int, input().split()))
+    num = int(input())
+    print(series(num))
     cases -=1
 
