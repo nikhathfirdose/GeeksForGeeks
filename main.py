@@ -72,11 +72,72 @@ def series(n):
     i+=1
   return int(sums)
 
+
+def firstAlphabet(S):
+  lis = S.split()
+  for i in lis:
+    print(i[0], end ="")
+  return ""
+
+def setBits(N):
+  val = bin(N)
+  return val.count("1")
+
+def lexically(n,s):
+  minVal = n[0]
+  maxVal = n[0]
+  for i in range(1,s):
+    if(n[i]<minVal):
+      minVal =n[i]
+    elif(n[i]>maxVal):
+      maxVal=n[i]
+  return " ".join([minVal,maxVal])
+
+  # or
+  minVal = min(n)
+  maxVal = max(n)
+
+
+def removeDuplicates(s):
+  result = []
+  for i in range(len(s)):
+    if(s[i] not in result):
+      result.append(s[i])
+  return "".join(result)
+
+
+def moveZeroes(nums):
+  x = nums.count(0)
+  for i in range(x):
+    nums.remove(0)
+    nums.append(0)
+  return nums
+def longestSub(a):
+    count=0
+    maxCount = 0
+    for i in a:
+        if(int(i)>0):
+            count+=1
+        else:
+            count=0
+        maxCount = max(maxCount,count)
+    return maxCount
+
+
+
 cases = int(input())
 while cases > 0:
-    # size, sums= input().split()
-    # arr = list(map(int, input().split()))
-    num = int(input())
-    print(series(num))
+    size= int(input())
+    arr = list(map(str, input().split()))
+    # num = int(input())
+    print(longestSub(arr))
     cases -=1
+def remove(st):
+  vowel = ["a","e","i","o","u"]
+  ans =[]
+  for i in st:
+    if(i not in vowel):
+      ans.append(i)
+  return "".join(ans)
 
+print(remove("abcdefghiiixcvuu")) 
