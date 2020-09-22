@@ -124,20 +124,53 @@ def longestSub(a):
     return maxCount
 
 
+# def leader(s,a):
+#   for i in range(s):
+#     for j in range(i+1,s):
+#       if(arr[i]<arr[j]):
+#         break
+#     if(j==s-1):
+#       print(arr[i], end=" ")
+
+
+def printLeaders(arr,size):  
+      
+    for i in range(0, size):  
+        for j in range(i+1, size):  
+            if arr[i]<arr[j]:  
+                break
+        if j == size-1: # If loop didn't break  
+            print(arr[i], end=" ")  
+  
+# Driver function  
 
 cases = int(input())
 while cases > 0:
     size= int(input())
-    arr = list(map(str, input().split()))
+    arr = list(map(int, input().split()))
     # num = int(input())
-    print(longestSub(arr))
+    printLeaders(arr,size)
     cases -=1
-def remove(st):
-  vowel = ["a","e","i","o","u"]
-  ans =[]
-  for i in st:
-    if(i not in vowel):
-      ans.append(i)
-  return "".join(ans)
+# def remove(st):
+#   vowel = ["a","e","i","o","u"]
+#   ans =[]
+#   for i in st:
+#     if(i not in vowel):
+#       ans.append(i)
+#   return "".join(ans)
 
-print(remove("abcdefghiiixcvuu")) 
+# print(remove("abcdefghiiixcvuu")) 
+
+
+# unsorted_list = [3, 1, 0, 9, 4]
+# sorted_list = []
+
+# while unsorted_list:
+#     minimum = unsorted_list[0]
+#     for item in unsorted_list:
+#         if item < minimum:
+#             minimum = item
+#             print(minimum)
+#     sorted_list.append(minimum)
+#     unsorted_list.remove(minimum)
+
