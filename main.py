@@ -1,18 +1,3 @@
-
-# def takeInput():
-#   cases = int(input())
-#   while cases > 0:
-#     size = int(input())
-#     arr = list(map(int, input().split()))
-#   # num = int(input())
-#     print(mean(arr))
-#     cases -=1
-
-#code
-# import math
-549755813888
-# print(round(math.log(0,2),1).is_integer())
-
 def rotation(a,r):
     i = 0
     while i > int(r):
@@ -25,25 +10,11 @@ def missing(arr,n):
   return sum(range(n+1)) - sum(arr)
 
 
-
-def power(num):
-    if(num > 0):
-      # return "YES" if round(math.log(num, 2),2).is_integer() else "NO"
-      pass
-
-
 def majority(arr,n):
     for i in range(n):
         if(arr.count(i) > n//2):
             return i
     return -1
-
-
-    
-# for _ in range(int(input())):
-#     n = int(input())
-#     arr = list(map(int, input().split()))
-#     print(majority(arr, n))
 
 def subArraySum(arr, n, sum): 
     for i in range(n): 
@@ -61,9 +32,7 @@ def subArraySum(arr, n, sum):
             j += 1
     return 0
 
-
 def series(n):
-  # x = [1,2,3]
   i=1
   sums = 0
   while i<=n:
@@ -71,7 +40,6 @@ def series(n):
     sums+=val
     i+=1
   return int(sums)
-
 
 def firstAlphabet(S):
   lis = S.split()
@@ -97,7 +65,6 @@ def lexically(n,s):
   minVal = min(n)
   maxVal = max(n)
 
-
 def removeDuplicates(s):
   result = []
   for i in range(len(s)):
@@ -105,13 +72,13 @@ def removeDuplicates(s):
       result.append(s[i])
   return "".join(result)
 
-
 def moveZeroes(nums):
   x = nums.count(0)
   for i in range(x):
     nums.remove(0)
     nums.append(0)
   return nums
+
 def longestSub(a):
     count=0
     maxCount = 0
@@ -123,18 +90,15 @@ def longestSub(a):
         maxCount = max(maxCount,count)
     return maxCount
 
+def leader(s,arr):
+  for i in range(s):
+    for j in range(i+1,s):
+      if(arr[i]<arr[j]):
+        break
+    if(j==s-1):
+      print(arr[i], end=" ")
 
-# def leader(s,a):
-#   for i in range(s):
-#     for j in range(i+1,s):
-#       if(arr[i]<arr[j]):
-#         break
-#     if(j==s-1):
-#       print(arr[i], end=" ")
-
-
-def printLeaders(arr,size):  
-      
+def printLeaders(arr,size): 
     for i in range(0, size):  
         for j in range(i+1, size):  
             if arr[i]<arr[j]:  
@@ -142,8 +106,38 @@ def printLeaders(arr,size):
         if j == size-1: # If loop didn't break  
             print(arr[i], end=" ")  
   
-# Driver function  
 
+def remove(st):
+  vowel = ["a","e","i","o","u"]
+  ans =[]
+  for i in st:
+    if(i not in vowel):
+      ans.append(i)
+  return "".join(ans)
+
+def sorted(unsorted_list,sorted_list):
+  while unsorted_list:
+      minimum = unsorted_list[0]
+      for item in unsorted_list:
+          if item < minimum:
+              minimum = item
+              print(minimum)
+      sorted_list.append(minimum)
+      unsorted_list.remove(minimum)
+
+def countPrime(n):
+  countN=0
+  countP=0
+  for i in range(2,n):
+    for j in range(1,n):
+      if(i%j==0):
+        countN+=1
+    if(countN==2):
+      countP+=1
+    countN=0
+  return countP
+    
+      
 cases = int(input())
 while cases > 0:
     size= int(input())
@@ -151,26 +145,5 @@ while cases > 0:
     # num = int(input())
     printLeaders(arr,size)
     cases -=1
-# def remove(st):
-#   vowel = ["a","e","i","o","u"]
-#   ans =[]
-#   for i in st:
-#     if(i not in vowel):
-#       ans.append(i)
-#   return "".join(ans)
 
-# print(remove("abcdefghiiixcvuu")) 
-
-
-# unsorted_list = [3, 1, 0, 9, 4]
-# sorted_list = []
-
-# while unsorted_list:
-#     minimum = unsorted_list[0]
-#     for item in unsorted_list:
-#         if item < minimum:
-#             minimum = item
-#             print(minimum)
-#     sorted_list.append(minimum)
-#     unsorted_list.remove(minimum)
-
+print(countPrime(10))
