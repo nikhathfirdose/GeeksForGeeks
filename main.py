@@ -138,12 +138,60 @@ def countPrime(n):
   return countP
     
       
-cases = int(input())
-while cases > 0:
-    size= int(input())
-    arr = list(map(int, input().split()))
-    # num = int(input())
-    printLeaders(arr,size)
-    cases -=1
+# cases = int(input())
+# while cases > 0:
+#     size= int(input())
+#     arr = list(map(int, input().split()))
+#     # num = int(input())
+#     printLeaders(arr,size)
+#     cases -=1
 
-print(countPrime(10))
+# print(countPrime(10))
+
+
+def calc(m):
+  sums=0
+  for i in range(1,m+1):
+    num = i*10
+    sums+=num
+  return sums
+
+# print(calc(12))
+
+# 7
+# 10 7 9 3 2 1 15
+# GUVI
+def smallNum():
+  size = int(input())
+  arr = list(map(int,input().split()))
+  result=[]
+  for i in range(size):
+    j=i+1
+    while j<size:
+      if(arr[j]<arr[i]):
+        result.append(arr[j])
+        break
+      else:
+        j+=1
+  add = len(result)
+  while add<size:
+    result.append(-1) 
+    add+=1 
+  print(" ".join(str(r) for r in result))
+
+def beautiful(a):
+  sum=0
+  for i in a:
+    sum+=i
+  if(i%2==0 and i%3==0 and i%5==0):
+    return 1
+  else:
+    return 0
+# 5 25 35 -5 30
+# size = int(input())
+# arr = list(map(int,input().split()))
+# print(beautiful(arr))
+
+x =[10,30,80,90,4,3,0]
+v=sorted(x)
+print(v)
